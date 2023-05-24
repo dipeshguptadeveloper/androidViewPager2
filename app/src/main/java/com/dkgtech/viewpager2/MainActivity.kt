@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
 
+        binding.viewPager.isUserInputEnabled = false // to disable sync
+
         TabLayoutMediator(binding.tabLayout, binding.viewPager, object : TabConfigurationStrategy {
             override fun onConfigureTab(tab: TabLayout.Tab, position: Int) {
                 tab.text = tabText[position].title
